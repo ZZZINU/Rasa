@@ -28,3 +28,12 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: draw word
+  steps: 
+  - intent: draw_word
+  - action: utter_draw_word
+  - intent: draw_finish
+  - action: utter_draw_finish
+  - intent: closing_comment
+  - action: utter_closing_comment

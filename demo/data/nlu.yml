@@ -89,3 +89,18 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+  
+- intent: draw_word
+  examples: |
+    - sea, sky, winter, sunny, fish
+    - mountain, trees, flowers, spring, landscape
+
+- intent: draw_finish
+  examples: |
+    - 다 그렸어
+
+- intent: closing_comment
+  examples: |
+    - 멋지다, 고마워~
+    - 멋지다
+    - 고마워

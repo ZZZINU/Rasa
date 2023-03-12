@@ -8,6 +8,9 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - draw_word
+  - draw_finish
+  - closing_comment
 
 responses:
   utter_greet:
@@ -29,6 +32,15 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_draw_word:
+  - text: "표현해주신 단어를 그림으로 그려보세요."
+
+  utter_draw_finish:
+  - text: "그려주신걸 제가 더 멋진 그림으로 완성해드릴게요!"
+
+  utter_closing_comment:
+  - text: "별말씀을요"
+  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
