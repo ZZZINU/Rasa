@@ -8,6 +8,8 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - draw_ing
+  - draw_start
   - draw_word
   - draw_finish
   - closing_comment
@@ -32,8 +34,14 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_draw_start:
+  - text: "그리고 싶은 것을 단어로 표현해주세요."
+
   utter_draw_word:
   - text: "표현해주신 단어를 그림으로 그려보세요."
+
+  utter_draw_ing:
+  - text: "{drawing_word}를 그리셨네요! 이런식으로 더 그려보는건 어떠세요?"
 
   utter_draw_finish:
   - text: "그려주신걸 제가 더 멋진 그림으로 완성해드릴게요!"
@@ -44,3 +52,14 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+entities:
+  - drawing_word
+
+slots:
+  drawing_word:
+    type: list
+    #influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: drawing_word

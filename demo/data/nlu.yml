@@ -89,11 +89,20 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-  
+
+- intent: draw_start
+  examples: |
+    - 그림 그리고 싶어
+    - 그림 그리기
+
 - intent: draw_word
   examples: |
-    - sea, sky, winter, sunny, fish
-    - mountain, trees, flowers, spring, landscape
+    - [mountain, trees, flowers, spring, landscape, sea, sky, winter, sunny, fish](drawing_word)
+
+- intent: draw_ing
+  examples: |
+    - 그래, 더 그려볼게
+    - 더 그려볼게
 
 - intent: draw_finish
   examples: |

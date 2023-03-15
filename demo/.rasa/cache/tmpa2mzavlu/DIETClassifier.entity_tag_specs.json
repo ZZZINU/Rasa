@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-drawing_word",
+      "2": "I-drawing_word",
+      "3": "L-drawing_word",
+      "4": "U-drawing_word",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-drawing_word": 1,
+      "I-drawing_word": 2,
+      "L-drawing_word": 3,
+      "U-drawing_word": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]
