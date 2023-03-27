@@ -1,0 +1,137 @@
+version: "3.1"
+
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+
+- inform
+- draw_start
+- draw_ing
+- draw_word
+- save_characteristics
+- change_ok
+- change_start
+- draw_finish
+- closing_comment
+- stop
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_draw_start:
+  - text: "'고양이'와 '산과 나무'중 어느 것을 그리고 싶으세요?"
+
+  utter_draw_word:
+  - text: "표현해주신 단어를 그림으로 그려보세요."
+
+  utter_save_characteristics:
+  - text: "그리신 {drawing_word}의 특징이 뭔가요? white cat, blue eyes, diamond necklace 과 같이 설명해주세요!"
+
+  utter_draw_ing:
+  - text: "그리신 그림에 말씀해주신 특징을 넣어 그림을 완성해볼게요. 잠시만 기다려주세요~"
+
+  utter_draw_ing2:
+  - text: "더 수정해보시겠어요?"
+
+  utter_draw_finish:
+  - text: "그려주신걸 제가 더 멋진 그림으로 완성해드릴게요!"
+
+  utter_closing_comment:
+  - text: "별말씀을요"
+
+  utter_draw_sketch: 
+  - text: '다음으로 이렇게 그리는게 어떤가요?'
+
+  utter_ask_drawing_word:
+  - text: "'고양이'와 '산과 나무'중 어느 것을 그리고 싶으세요?"
+
+  utter_ask_save_characteristic:
+  - text: "그리신 {drawing_word}의 특징이 뭔가요? white cat, blue eyes, diamond necklace 과 같이 설명해주세요!"
+
+  utter_ask_sketch_type:
+  - text: "칠한 부분을 어떻게 수정하고 싶으세요? 'wear a hat'이나 'wear a diamond necklace'처럼 설명해주세요!"
+
+  utter_change_start:
+  - text: "저는 목걸이나 모자를 씌우게 할 수 있어요! 이 중 수정하고 싶은 부분을 꼼꼼하게 칠해주세요."
+
+  utter_submit:
+  - text: "수정확인"
+
+  utter_draw_slots:
+  - text: "{drawing_word}"
+
+  utter_ask_continue:
+  - text: Are you sure you want to stop the form?
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+entities:
+- drawing_word
+- save_characteristic
+- sketch_type
+
+slots:
+  drawing_word:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: drawing_word
+  save_characteristic:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: save_characteristic
+  sketch_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: sketch_type
+
+
+forms:
+  draw_sketch_form: 
+    required_slots:
+      - drawing_word
+      - save_characteristic
+  change_sketch_form:
+    required_slots:
+      - sketch_type
+
+actions:
+- utter_draw_start
+- utter_draw_word
+- utter_save_characteristics
+- utter_draw_ing
+- utter_draw_ing2
+- utter_draw_slots
+- validate_draw_sketch_form
+- validate_change_sketch_form
+- utter_ask_continue
+- utter_submit

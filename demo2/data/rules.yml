@@ -1,0 +1,48 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+# - rule: draw the sketch
+#   steps:
+#   - intent: draw_sketch
+#   - action: utter_draw_sketch
+
+# - rule: Activate Draw Form
+#   steps:
+#   - intent: draw_start
+#   - action: draw_sketch_form
+#   - active_loop: draw_sketch_form
+
+# - rule: Submit Draw Form
+#   condition:
+#   - active_loop: draw_sketch_form
+#   steps:
+#   - action: draw_sketch_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: utter_submit
+#   - action: utter_draw_slots
+
+# - rule: Interruption in Draw Form
+#   condition:
+#   # Condition that form is active.
+#   - active_loop: draw_sketch_form
+#   steps:
+#   # This unhappy path handles the case of an intent `bot_challenge`.
+#   - intent: bot_challenge
+#   - action: utter_iamabot
+#   # Return to form after handling the `bot_challenge` intent
+#   - action: draw_sketch_form
+#   - active_loop: draw_sketch_form
+

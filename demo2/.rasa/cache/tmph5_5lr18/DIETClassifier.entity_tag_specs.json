@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-drawing_word",
+      "2": "I-drawing_word",
+      "3": "L-drawing_word",
+      "4": "U-drawing_word",
+      "5": "B-save_characteristic",
+      "6": "I-save_characteristic",
+      "7": "L-save_characteristic",
+      "8": "U-save_characteristic",
+      "9": "B-sketch_type",
+      "10": "I-sketch_type",
+      "11": "L-sketch_type",
+      "12": "U-sketch_type",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-drawing_word": 1,
+      "I-drawing_word": 2,
+      "L-drawing_word": 3,
+      "U-drawing_word": 4,
+      "B-save_characteristic": 5,
+      "I-save_characteristic": 6,
+      "L-save_characteristic": 7,
+      "U-save_characteristic": 8,
+      "B-sketch_type": 9,
+      "I-sketch_type": 10,
+      "L-sketch_type": 11,
+      "U-sketch_type": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]
