@@ -17,22 +17,64 @@ rules:
 #   - intent: draw_sketch
 #   - action: utter_draw_sketch
 
-# - rule: Activate Draw Form
-#   steps:
-#   - intent: draw_start
-#   - action: draw_sketch_form
-#   - active_loop: draw_sketch_form
+- rule: Activate Draw Form
+  steps:
+  - intent: draw_start
+  - action: draw_sketch_form
+  - active_loop: draw_sketch_form
 
-# - rule: Submit Draw Form
-#   condition:
-#   - active_loop: draw_sketch_form
-#   steps:
-#   - action: draw_sketch_form
-#   - active_loop: null
-#   - slot_was_set:
-#     - requested_slot: null
-#   - action: utter_submit
-#   - action: utter_draw_slots
+- rule: Submit Draw Form
+  condition:
+  - active_loop: draw_sketch_form
+  steps:
+  - slot_was_set:
+    - requested_slot: null
+  - action: draw_sketch_form
+  - active_loop: null
+  - action: utter_draw_ing
+
+- rule: Change okay 
+  steps:
+  - intent: change_ok
+  - action: utter_change_start
+
+- rule: Activate Change Sketch Form
+  steps:
+
+  - intent: change_start
+  - action: change_sketch_form
+  - active_loop: change_sketch_form
+
+- rule: Submit Change Sketch Form
+  condition:
+  - active_loop: change_sketch_form
+  steps:
+  - slot_was_set:
+    - requested_slot: null
+  - action: change_sketch_form
+  - active_loop: null
+  - action: utter_submit_change_form
+
+
+- rule: Complete Change Sketch
+  steps:
+  - intent: closing_comment
+  - action: utter_closing_comment
+
+
+
+
+
+
+
+
+
+  # - action: draw_sketch_form
+  # - active_loop: null
+  # - slot_was_set:
+  #   - requested_slot: null
+  # - action: utter_submit
+  # - action: utter_draw_ing
 
 # - rule: Interruption in Draw Form
 #   condition:

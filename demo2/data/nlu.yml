@@ -101,11 +101,11 @@ nlu:
     - [고양이](drawing_word) 그릴래
     - [산과 나무](drawing_word) 그릴래
     - [고양이](drawing_word)
-    - [black cat](save_characteristic)
-    - [yellow eyes](save_characteristic)
+    - [white cat](save_characteristic)
+    - [blue eyes](save_characteristic)
     - [diamond necklace](save_characteristic)
-    - [wear a hat](sketch_type)
-    - [wear a diamond necklace](sketch_type)
+    - [wear a hat](change_sketch)
+    - [wear a diamond necklace](change_sketch)
     
 # - intent: draw_word
 #   examples: |
@@ -135,6 +135,8 @@ nlu:
     - 멋지다, 고마워~
     - 멋지다
     - 고마워
+    - 마음에 들어. 고마워
+    - 마음에 들어
 
 - intent: stop
   examples: |

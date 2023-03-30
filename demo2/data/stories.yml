@@ -1,62 +1,66 @@
-version: "3.1"
+# version: "3.1"
 
-stories:
+# stories:
 
-- story: draw word
-  steps: 
-  - intent: draw_start
-  # - action: utter_draw_start
-  # - intent: draw_word
-  - action: draw_sketch_form
-  - active_loop: draw_sketch_form
-  - slot_was_set:
-    - requested_slot: drawing_word
-  - slot_was_set:
-    - drawing_word: 고양이
-  - slot_was_set:
-    - drawing_word: 고양이
-  - slot_was_set:
-    - requested_slot: save_characteristic
-  - slot_was_set:
-    - save_characteristic: white cat
-  - slot_was_set:
-    - save_characteristic: null
-  # - slot_was_set:
-  #   - requested_slot: drawing_word  
-  # - slot_was_set:
-  #   - requested_slot: save_characteristic
-  # - intent: save_characteristic
-  # - intent: stop
-  - action: utter_draw_ing
-  - action: utter_draw_ing2
-  - intent: change_ok
-  - action: utter_change_start
-  - intent: change_start
-  - action: change_sketch_form
-  - active_loop: change_sketch_form
+# - story: draw word
+#   steps: 
+#   - intent: draw_start
+#   # - action: utter_draw_start
+#   # - intent: draw_word
+#   - action: draw_sketch_form
+#   - active_loop: draw_sketch_form
+#   - slot_was_set:
+#     - requested_slot: drawing_word
+#   - slot_was_set:
+#     - drawing_word: 고양이
+#   - slot_was_set:
+#     - drawing_word: 고양이
+#   - slot_was_set:
+#     - requested_slot: save_characteristic
+#   - slot_was_set:
+#     - save_characteristic: white cat
+#   - slot_was_set:
+#     - save_characteristic: null
+#   # - slot_was_set:
+#   #   - requested_slot: drawing_word  
+#   # - slot_was_set:
+#   #   - requested_slot: save_characteristic
+#   # - intent: save_characteristic
+#   # - intent: stop
+
+#   # - action: utter_draw_ing
+#   # - action: utter_draw_ing2
+#   - intent: change_ok
+#   # - action: utter_change_start
+#   # - intent: change_start
+#   # - action: change_sketch_form
+#   # - active_loop: change_sketch_form
 
   
   
-  #   entities:
-  #   - drawing_word: tree
-  # - slot_was_set:
-  #   - drawing_word: tree
-  # - action: utter_draw_word
-  - intent: stop
-  - action: utter_ask_continue
-  - or: 
-    - intent: stop
-    - intent: affirm
-  - action: action_deactivate_loop
-  - active_loop: null
+#   #   entities:
+#   #   - drawing_word: tree
+#   # - slot_was_set:
+#   #   - drawing_word: tree
+#   # - action: utter_draw_word
 
 
 
-  # 나중에 넣기
-  # - intent: draw_finish
-  # - action: utter_draw_ing
-  # - intent: draw_ing
-  # - intent: draw_finish
-  # - action: utter_draw_finish
-  # - intent: closing_comment
-  # - action: utter_closing_comment
+#   # - intent: stop
+#   # - action: utter_ask_continue
+#   # - or: 
+#   #   - intent: stop
+#   #   - intent: affirm
+#   # - action: action_deactivate_loop
+#   # - active_loop: null
+
+
+
+#   # 나중에 넣기
+#   # - intent: draw_finish
+#   # - action: utter_draw_ing
+#   # - intent: draw_ing
+#   # - intent: draw_finish
+#   # - action: utter_draw_finish
+#   # - intent: closing_comment
+#   # - action: utter_closing_comment
