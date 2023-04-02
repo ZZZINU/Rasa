@@ -6,7 +6,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 
 ALLOWED_DRAWING_WORDS = ["고양이", "산과 나무"]
-ALLOWED_SAVE_CHARACTERISTIC = ["white cat", "blue eyes", "diamond necklace"]
+ALLOWED_SAVE_CHARACTERISTIC = ["black cat", "yellow eyes", "pearl necklace"]
 ALLOWED_CHANGE_SKETCH = ["wear a hat", "wear a diamond necklace"]
 
 class ValidateDrawSketchForm(FormValidationAction):
