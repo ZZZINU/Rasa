@@ -1,0 +1,50 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"drawing_form\"}}]": "utter_submit_drawing",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"drawing_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit_drawing\"}}]": "submit_drawing_form",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"drawing_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit_drawing\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"submit_drawing_form\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"inpainting_form\"}}]": "utter_submit_inpainting",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"inpainting_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit_inpainting\"}}]": "submit_inpainting_form",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"inpainting_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit_inpainting\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"submit_inpainting_form\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"drawing\"}}]": "drawing_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"drawing\"}}, {\"active_loop\": {\"name\": \"drawing_form\"}, \"prev_action\": {\"action_name\": \"drawing_form\"}, \"user\": {\"intent\": \"drawing\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inpainting\"}}]": "utter_inpaint",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inpainting\"}}, {\"prev_action\": {\"action_name\": \"utter_inpaint\"}, \"user\": {\"intent\": \"inpainting\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_inpaint\"}}]": "action_set_reminder",
+      "[{\"prev_action\": {\"action_name\": \"utter_inpaint\"}}, {\"prev_action\": {\"action_name\": \"action_set_reminder\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inpainting_done\"}}]": "inpainting_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inpainting_done\"}}, {\"active_loop\": {\"name\": \"inpainting_form\"}, \"prev_action\": {\"action_name\": \"inpainting_form\"}, \"user\": {\"intent\": \"inpainting_done\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "drawing_form",
+      "inpainting_form"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"drawing_form\"}, \"prev_action\": {\"action_name\": \"drawing_form\"}, \"user\": {\"intent\": \"drawing\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"inpainting_form\"}, \"prev_action\": {\"action_name\": \"inpainting_form\"}, \"user\": {\"intent\": \"inpainting_done\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - drawing_form",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"drawing_form\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"drawing_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit_drawing\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"submit_drawing_form\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inpainting\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"utter_inpaint\"}}, {\"prev_action\": {\"action_name\": \"action_set_reminder\"}}]",
+      "predicting default action with intent restart",
+      "handling active loops and forms - drawing_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inpainting_done\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"drawing_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit_drawing\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inpainting\"}}, {\"prev_action\": {\"action_name\": \"utter_inpaint\"}, \"user\": {\"intent\": \"inpainting\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"drawing\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"inpainting_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit_inpainting\"}}]",
+      "handling active loops and forms - inpainting_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_inpaint\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"inpainting_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit_inpainting\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"submit_inpainting_form\"}}]",
+      "predicting default action with intent back",
+      "handling active loops and forms - inpainting_form",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"inpainting_form\"}}]"
+    ]
+  }
+}

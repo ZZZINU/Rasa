@@ -1,0 +1,228 @@
+version: "3.1"
+
+nlu:
+# - intent: greet
+#   examples: |
+#     - hey
+#     - hello
+#     - hi
+#     - hello there
+#     - good morning
+#     - good evening
+#     - moin
+#     - hey there
+#     - let's go
+#     - hey dude
+#     - goodmorning
+#     - goodevening
+#     - good afternoon
+
+# - intent: goodbye
+#   examples: |
+#     - cu
+#     - good by
+#     - cee you later
+#     - good night
+#     - bye
+#     - goodbye
+#     - have a nice day
+#     - see you around
+#     - bye bye
+#     - see you later
+
+# - intent: affirm
+#   examples: |
+#     - yes
+#     - y
+#     - indeed
+#     - of course
+#     - that sounds good
+#     - correct
+
+# - intent: deny
+#   examples: |
+#     - no
+#     - n
+#     - never
+#     - I don't think so
+#     - don't like that
+#     - no way
+#     - not really
+
+# - intent: mood_great
+#   examples: |
+#     - perfect
+#     - great
+#     - amazing
+#     - feeling like a king
+#     - wonderful
+#     - I am feeling very good
+#     - I am great
+#     - I am amazing
+#     - I am going to save the world
+#     - super stoked
+#     - extremely good
+#     - so so perfect
+#     - so good
+#     - so perfect
+
+# - intent: mood_unhappy
+#   examples: |
+#     - my day was horrible
+#     - I am sad
+#     - I don't feel very well
+#     - I am disappointed
+#     - super sad
+#     - I'm so sad
+#     - sad
+#     - very sad
+#     - unhappy
+#     - not good
+#     - not very good
+#     - extremly sad
+#     - so saad
+#     - so sad
+
+# - intent: bot_challenge
+#   examples: |
+#     - are you a bot?
+#     - are you a human?
+#     - am I talking to a bot?
+#     - am I talking to a human?
+
+####################
+
+# - intent: buy_pizza
+#   examples: |
+#     - i'd like to buy a pizza
+#     - i want a pizza
+#     - can i buy a pizza
+#     - I'm interested in a savory round flattened bread of Italian origin
+#     - i want to buy a pizza
+
+# - intent: inform  ## entity 의 예시들을 모두 넣어 놓음
+#   examples: |
+#     - i'd like a [large](pizza_size) pizza
+#     - i want to order a [xl](pizza_size) [hawai](pizza_type) pizza
+#     - [medium](pizza_size) pizza
+#     - [xl](pizza_size)
+#     - [small](pizza_size)
+#     - [s](pizza_size)
+#     - [pepperoni](pizza_type)
+
+####################
+
+- intent: greet
+  examples: |
+    - 안녕
+    - 안녕하세요
+    - 반가워
+    - 만나서 반가워
+
+- intent: drawing
+  examples: |
+    - 그림 그릴래
+    - 나 그림 그릴래
+    - 그림 그리고 싶어
+    - 그림 그리기
+    - 그림 그릴래
+    - 그림을 그려보자
+    - 그림 그려볼까?
+    - 그림 그리는 거 어때?
+    - 같이 그림 그리자.
+    - 그림 그릴까?
+    - 그림 좀 그려보자
+
+- intent: inpainting
+  examples: | 
+    - 추가할래
+    - 추가해볼래
+    - 응 추가할래
+    - 응 추가해볼래
+    - Yes, I want to add it
+
+# - intent: drawing_object
+#   examples: | 
+#     - 나 [고양이](drawing_object) 그림 그릴래
+#     - 나 [산과 나무](drawing_object) 그림 그릴래
+
+# - intent: drawing_prompt
+#     - [black cat](drawing_prompt)
+#     - [yellow eyes](drawing_prompt)
+#     - [pearl neacklace](drawing_prompt)
+
+- intent: inform
+  examples: |
+    - [고양이](drawing_object)
+    - 나 [고양이](drawing_object) 그림 그릴래
+    - [고양이](drawing_object) 그릴래
+    - [고양이](drawing_object) 그릴까?
+    - [고양이](drawing_object) 그려볼까?
+    - 같이 [고양이](drawing_object) 그리자
+    - [고양이](drawing_object)가 좋아
+    - [고양이](drawing_object)가 더 끌려
+    - [고양이](drawing_object)가 더 재밌을 것 같아
+
+    - [산과 나무](drawing_object)
+    - 나 [산과 나무](drawing_object) 그림 그릴래
+    - [강아지](drawing_object)
+
+    - [black cat](drawing_prompt)
+    - [yellow eyes](drawing_prompt)
+    - [pearl neacklace](drawing_prompt)
+    - [spring](drawing_prompt)
+    - [summer](drawing_prompt)
+    - [fall](drawing_prompt)
+    - [winter](drawing_prompt)
+
+    - [wear a hat](inpainting_prompt)
+    - [wear a diamond necklace](inpainting_prompt)
+
+# drawing_done, inpainting_done 은 하나로 합쳐도 될듯?
+- intent: drawing_done
+  examples: |
+    - 그렸어
+    - 다 그렸어
+    - 그림 완성했어
+    - 그림 그리는 거 끝났어
+    - 이게 완성본이야
+    - 여기 있어
+    - 그림 완성
+    - 다 했어
+    - 이렇게 그리면 되지?
+
+- intent: inpainting_done
+  examples: |
+    - 칠했어
+    - 다 칠했어
+    - 다 색칠했어
+    - 여기
+    - 응, 다했어
+    - 이렇게 칠하면 되지?
+    - 응, 다 채웠어
+#
+
+- intent: thanks
+  examples: |
+    - 고마워
+    - 땡큐
+    - 멋지다, 고마워~
+    - 멋지다
+    - 마음에 들어. 고마워
+    - 마음에 들어
+    - 고마워, 마음에 드네.
+    - 마음에 든다
+    - 수고했어
+    - 고양이 그림이 더 귀여워졌네
+    - 고양이 캐릭터가 더 귀여워졌네
+    - 응, 고양이 마음에 든다
+    - 마음에 들어, 재밌었어
+
+- intent: ask_remind_call
+  examples: |
+    - 응 알겠어
+    - remind me to call John
+    - later I have to call Alan
+    - Please, remind me to call Vova
+    - please remind me to call Tanja
+    - I must not forget to call Juste

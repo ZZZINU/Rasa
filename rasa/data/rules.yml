@@ -1,0 +1,103 @@
+version: "3.1"
+
+rules:
+
+# - rule: Say goodbye anytime the user says goodbye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
+
+# - rule: Say 'I am a bot' anytime the user challenges
+#   steps:
+#   - intent: bot_challenge
+#   - action: utter_iamabot
+
+####################
+
+# - rule: Activate Pizza Form ## start the form
+#   steps:
+#   - intent: buy_pizza
+#   - action: simple_pizza_form
+#   - active_loop: simple_pizza_form
+
+# - rule: Submit Pizza Form
+#   # Ensure that we're starting from an active loop
+#   condition:
+#   - active_loop: simple_pizza_form
+#   steps:
+#   - action: simple_pizza_form
+#   # If there are no more requested slots
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   # Then submit the form
+#   - action: utter_submit
+#   - action: utter_pizza_slots
+
+####################
+
+# - rule:
+#   steps: Start Drawing
+#   - intent: drawing
+#   - action: utter_
+
+# drawing
+- rule: Activate Drawing Form
+  steps:
+  - intent: drawing
+  - action: drawing_form
+  - active_loop: drawing_form
+
+- rule: Submit Drawing Form
+  condition:
+  - active_loop: drawing_form
+  steps:
+  - action: drawing_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit_drawing
+  - action: submit_drawing_form
+
+# inpainting
+- rule: Activate Inpainting Form
+  steps:
+  - intent: inpainting
+  - action: utter_inpaint
+  - action: action_set_reminder
+
+# - rule: Check completion
+#   steps:
+#   - action: utter_inpaint
+#   - intent: null  # 사용자의 입력이 인텐트를 인식하지 못한 경우
+#   - action: action_check_completion  # 1분 이상 응답이 없는 경우 action_check_completion 액션을 실행
+
+
+  
+- rule: Activate Inpainting Form
+  steps:
+  - intent: inpainting_done
+  - action: inpainting_form
+  - active_loop: inpainting_form
+
+- rule: Submit Inpainting Form
+  condition:
+  - active_loop: inpainting_form
+  steps:
+  - action: inpainting_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit_inpainting
+  - action: submit_inpainting_form
+
+# - rule: Schedule a reminder
+#   steps:
+#   - intent: inpainting
+#   - action: action_set_reminder
+
+
+- rule: Trigger `action_react_to_reminder` for `EXTERNAL_reminder`
+  steps:
+  - intent: EXTERNAL_reminder
+  - action: action_react_to_reminder
