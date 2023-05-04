@@ -91,6 +91,7 @@ actions:
   - action_set_reminder
   - action_ask_again
   - action_react_to_reminder
+  - action_forget_reminders
 intents:
 #   - greet
 #   - goodbye
@@ -113,7 +114,7 @@ intents:
   - thanks
   - ask_remind_call
   - EXTERNAL_reminder
-
+  - ask_forget_reminders
 responses:
 #   utter_greet:
 #   - text: "Hey! How are you?"

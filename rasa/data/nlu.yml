@@ -159,7 +159,7 @@ nlu:
     - [고양이](drawing_object) 그릴까?
     - [고양이](drawing_object) 그려볼까?
     - 같이 [고양이](drawing_object) 그리자
-    - [고양이](drawing_object)가 좋아
+    - [고양이]가(drawing_object) 좋아
     - [고양이](drawing_object)가 더 끌려
     - [고양이](drawing_object)가 더 재밌을 것 같아
 
@@ -226,3 +226,11 @@ nlu:
     - Please, remind me to call Vova
     - please remind me to call Tanja
     - I must not forget to call Juste
+
+# 알림 취소
+- intent: ask_forget_reminders
+  examples: |
+    - Forget about the reminder
+    - do not remind me
+    - cancel the reminder
+    - cancel all reminders please

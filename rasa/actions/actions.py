@@ -33,7 +33,7 @@ from typing import Text, List, Any, Dict
 
 from rasa_sdk import Tracker, FormValidationAction, Action
 from rasa_sdk.events import EventType
-from rasa_sdk.events import SlotSet, ReminderScheduled
+from rasa_sdk.events import SlotSet, ReminderScheduled, ReminderCancelled
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import datetime
@@ -249,7 +249,7 @@ class ActionSetReminder(Action):
 
         dispatcher.utter_message("(알림 설정)")
 
-        date = datetime.datetime.now() + datetime.timedelta(seconds=5)
+        date = datetime.datetime.now() + datetime.timedelta(seconds=30)
         entities = tracker.latest_message.get("entities")
 
         reminder = ReminderScheduled(
@@ -280,3 +280,20 @@ class ActionReactToReminder(Action):
         dispatcher.utter_message(f"다 칠하셨나요?")
 
         return []
+    
+
+# 알림 취소
+class ForgetReminders(Action):
+    """Cancels all reminders."""
+
+    def name(self) -> Text:
+        return "action_forget_reminders"
+
+    async def run(
+        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(f"(알림 취소)")
+
+        # Cancel all reminders
+        return [ReminderCancelled()]

@@ -77,6 +77,7 @@ rules:
 - rule: Activate Inpainting Form
   steps:
   - intent: inpainting_done
+  - action: action_forget_reminders # 알림 취소
   - action: inpainting_form
   - active_loop: inpainting_form
 
@@ -101,3 +102,10 @@ rules:
   steps:
   - intent: EXTERNAL_reminder
   - action: action_react_to_reminder
+
+
+# # 알림 취소
+# - rule: Cancel a reminder
+#   steps:
+#   - intent: inpainting_done
+#   - action: action_forget_reminders
