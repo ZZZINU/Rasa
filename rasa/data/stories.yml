@@ -40,3 +40,4 @@ stories:
   steps:
   - intent: thanks
   - action: utter_thanks
+

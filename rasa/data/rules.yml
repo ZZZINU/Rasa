@@ -41,6 +41,14 @@ rules:
 #   - intent: drawing
 #   - action: utter_
 
+
+
+# greeting
+- rule: Greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
 # drawing
 - rule: Activate Drawing Form
   steps:
@@ -103,9 +111,23 @@ rules:
   - intent: EXTERNAL_reminder
   - action: action_react_to_reminder
 
+# # Thanks
+# - rule: Thanks
+#   steps:
+#   - intent: thanks
+#   - action: utter_thanks
+
 
 # # 알림 취소
 # - rule: Cancel a reminder
 #   steps:
 #   - intent: inpainting_done
 #   - action: action_forget_reminders
+
+
+# 예외 처리
+- rule: Re_drawing
+  steps: 
+  - intent: re_drawing
+  - action: utter_default
+

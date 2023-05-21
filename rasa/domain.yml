@@ -182,10 +182,13 @@ responses:
   - text: 별말씀을요.
 
   utter_default:
-  - text: "응답해주세요"
+  - text: "죄송합니다. 이해하지 못했습니다. 질문에 응답해주세요!"
 
   utter_qeustion:
   - text: "다 칠하셨나요?"
+
+  # utter_re_drawing:
+  # - text: "죄송합니다. 주어진 질문에 응답해주세요!"
 
 session_config:
   session_expiration_time: 60

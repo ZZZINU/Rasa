@@ -218,19 +218,26 @@ nlu:
     - 응, 고양이 마음에 든다
     - 마음에 들어, 재밌었어
 
-- intent: ask_remind_call
-  examples: |
-    - 응 알겠어
-    - remind me to call John
-    - later I have to call Alan
-    - Please, remind me to call Vova
-    - please remind me to call Tanja
-    - I must not forget to call Juste
+# - intent: ask_remind_call
+#   examples: |
+#     - 응 알겠어
+#     - remind me to call John
+#     - later I have to call Alan
+#     - Please, remind me to call Vova
+#     - please remind me to call Tanja
+#     - I must not forget to call Juste
 
-# 알림 취소
-- intent: ask_forget_reminders
+# # 알림 취소
+# - intent: ask_forget_reminders
+#   examples: |
+#     - Forget about the reminder
+#     - do not remind me
+#     - cancel the reminder
+#     - cancel all reminders please
+
+# 예외 (다시 그릴래)
+- intent: re_drawing
   examples: |
-    - Forget about the reminder
-    - do not remind me
-    - cancel the reminder
-    - cancel all reminders please
+    - 다시 그릴래
+    - 처음부터 다시 그리고 싶어
+    
