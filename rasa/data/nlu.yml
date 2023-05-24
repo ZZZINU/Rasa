@@ -236,8 +236,9 @@ nlu:
 #     - cancel all reminders please
 
 # 예외 (다시 그릴래)
-- intent: re_drawing
+- intent: exceptions
   examples: |
     - 다시 그릴래
     - 처음부터 다시 그리고 싶어
+    - 안 그릴래
     
