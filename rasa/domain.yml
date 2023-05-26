@@ -92,6 +92,7 @@ actions:
   - action_ask_again
   - action_react_to_reminder
   - action_forget_reminders
+  - action_reset_form
 intents:
 #   - greet
 #   - goodbye

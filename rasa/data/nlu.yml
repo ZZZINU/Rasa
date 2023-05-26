@@ -235,10 +235,12 @@ nlu:
 #     - cancel the reminder
 #     - cancel all reminders please
 
-# 예외 (다시 그릴래)
+# 예외
 - intent: exceptions
   examples: |
-    - 다시 그릴래
-    - 처음부터 다시 그리고 싶어
     - 안 그릴래
+    - 다시 그릴래
+    - 처음부터 다시할래
+
+
     

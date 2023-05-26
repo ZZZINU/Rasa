@@ -297,3 +297,15 @@ class ForgetReminders(Action):
 
         # Cancel all reminders
         return [ReminderCancelled()]
+    
+    
+# form slot 리셋    
+class ResetFormAction(Action):
+    def name(self):
+        return "action_reset_form"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(f"(form reset)")
+        return [SlotSet(slot, None) for slot in tracker.slots.keys()]
+
+

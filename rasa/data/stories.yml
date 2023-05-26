@@ -31,13 +31,13 @@ stories:
 
 ####################
 
-- story: greet
-  steps:
-  - intent: greet
-  - action: utter_greet
+# - story: greet
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
 
-- story: thanks
-  steps:
-  - intent: thanks
-  - action: utter_thanks
+# - story: thanks
+#   steps:
+#   - intent: thanks
+#   - action: utter_thanks
 

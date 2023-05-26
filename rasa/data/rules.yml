@@ -43,16 +43,28 @@ rules:
 
 
 
+
+
 # greeting
 - rule: Greeting
   steps:
   - intent: greet
   - action: utter_greet
 
+
+
 # drawing
 - rule: Activate Drawing Form
   steps:
   - intent: drawing
+  - action: drawing_form
+  - active_loop: drawing_form
+
+
+- rule: Re_drawing
+  steps:
+  - intent: re_drawing
+  - action: action_reset_form
   - action: drawing_form
   - active_loop: drawing_form
 
@@ -111,11 +123,12 @@ rules:
   - intent: EXTERNAL_reminder
   - action: action_react_to_reminder
 
-# # Thanks
-# - rule: Thanks
-#   steps:
-#   - intent: thanks
-#   - action: utter_thanks
+# Thanks
+- rule: Thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+#  - action: action_reset_form
 
 
 # # 알림 취소
@@ -126,8 +139,8 @@ rules:
 
 
 # 예외 처리
-- rule: Re_drawing
+- rule: Exceptions
   steps: 
-  - intent: re_drawing
+  - intent: exceptions
   - action: utter_default
 
