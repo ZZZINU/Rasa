@@ -306,6 +306,7 @@ class ResetFormAction(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(f"(form reset)")
-        return [SlotSet(slot, None) for slot in tracker.slots.keys()]
-
-
+        # return [SlotSet(slot, None) for slot in tracker.slots.keys()]
+        return [SlotSet("drawing_object", None), 
+                SlotSet("drawing_prompt", None),
+                SlotSet("inpainting_prompt", None)]
