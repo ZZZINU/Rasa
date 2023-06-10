@@ -59,6 +59,8 @@ rules:
   - intent: drawing
   - action: drawing_form
   - active_loop: drawing_form
+  - slot_was_set:
+    - requested_slot: null
 
 
 - rule: Re_drawing

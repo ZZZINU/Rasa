@@ -139,7 +139,6 @@ nlu:
     - 추가해볼래
     - 응 추가할래
     - 응 추가해볼래
-    - Yes, I want to add it
 
 # - intent: drawing_object
 #   examples: | 
@@ -239,8 +238,9 @@ nlu:
 - intent: exceptions
   examples: |
     - 안 그릴래
-    - 다시 그릴래
     - 처음부터 다시할래
 
 
-    
+- intent: re_drawing
+  examples: |
+    - 다시 그릴래
