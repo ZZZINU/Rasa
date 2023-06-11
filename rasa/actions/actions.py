@@ -233,7 +233,7 @@ class ResponseToDrawingObject(Action):
 
         return []
     
-
+# (추가) 사용자의 응답 없을 때
 class ActionSetReminder(Action):
     """Schedules a reminder, supplied with the last message's entities."""
 
@@ -262,7 +262,7 @@ class ActionSetReminder(Action):
 
         return [reminder]
 
-
+# (추가) 사용자의 응답 없을 때
 class ActionReactToReminder(Action):
     """Reminds the user to call someone."""
 
@@ -282,7 +282,7 @@ class ActionReactToReminder(Action):
         return []
     
 
-# 알림 취소
+# (추가) 알림 취소 기능 (일정 시간 내에 사용자가 응답을 했을 때)
 class ForgetReminders(Action):
     """Cancels all reminders."""
 
@@ -299,7 +299,7 @@ class ForgetReminders(Action):
         return [ReminderCancelled()]
     
     
-# form slot 리셋    
+#(추가)form slot 리셋  - 다시 그리기 기능  
 class ResetFormAction(Action):
     def name(self):
         return "action_reset_form"
