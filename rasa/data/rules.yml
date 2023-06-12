@@ -45,7 +45,7 @@ rules:
 
 
 
-# greeting
+# (추가)greeting
 - rule: Greeting
   steps:
   - intent: greet
@@ -62,7 +62,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
 
-
+# (추가) 다시 그리기 기능 
 - rule: Re_drawing
   steps:
   - intent: re_drawing
@@ -99,7 +99,7 @@ rules:
 - rule: Activate Inpainting Form
   steps:
   - intent: inpainting_done
-  - action: action_forget_reminders # 알림 취소
+  - action: action_forget_reminders # (추가) 알림 취소
   - action: inpainting_form
   - active_loop: inpainting_form
 
@@ -119,7 +119,7 @@ rules:
 #   - intent: inpainting
 #   - action: action_set_reminder
 
-
+# (추가) 사용자의 응답 없을 때
 - rule: Trigger `action_react_to_reminder` for `EXTERNAL_reminder`
   steps:
   - intent: EXTERNAL_reminder
@@ -130,7 +130,7 @@ rules:
   steps:
   - intent: thanks
   - action: utter_thanks
-#  - action: action_reset_form
+  # - action: action_reset_form
 
 
 # # 알림 취소
