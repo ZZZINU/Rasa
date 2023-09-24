@@ -60,6 +60,12 @@ stories:
   - action: object_form
   - active_loop: object_form
 
+# Drawing not Start (추가)
+- story: Drawing Not Start
+  steps:
+  - intent: inform
+  - action: object_form
+  - active_loop: object_form
 
 # drawing
 - story: Activate Drawing Form
